@@ -1,0 +1,11 @@
+:root {
+  --primary: #73552a;
+  --primary3: #8b714b;
+  --primary2: #b5a288;
+  --secondary: #fcedd6;
+  --black: #000;
+}
+
+.bg-main {
+  background: linear-gradient(1200deg, var(--primary) 65%, var(--secondary) 65%);
+}
