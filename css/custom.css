@@ -8,4 +8,14 @@
 
 .bg-main {
   background: linear-gradient(1200deg, var(--primary) 65%, var(--secondary) 65%);
+  height: 100vh;
+}
+
+.polaroid{
+  width: 30%;
+}
+
+.two{
+  display:none; 
+  transform: rotate(25deg);
 }
