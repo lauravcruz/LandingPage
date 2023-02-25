@@ -11,12 +11,18 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <link rel="stylesheet" href="css/temadark.css" id="theme-styles" />
+    <!--librería para alertas-->
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"
     ></script>
     <script defer src="js/custom.js"></script>
     <script defer src="js/bootstrap.bundle.js"></script>
+    <!--librería para carrousel-->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"
+    ></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-black sticky sticky-top">
@@ -33,11 +39,11 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mt-2 mt-lg-0 text-center">
             <li class="nav-item">
               <a
-                class="nav-link active text-secondary"
+                class="nav-link active text-secondary font"
                 href="#nosotros"
                 aria-current="page"
                 >Nosotros</a
@@ -45,7 +51,7 @@
             </li>
             <li class="nav-item">
               <a
-                class="nav-link active text-secondary"
+                class="nav-link active text-secondary font"
                 href="#servicios"
                 aria-current="page"
                 >Servicios</a
@@ -53,7 +59,7 @@
             </li>
             <li class="nav-item">
               <a
-                class="nav-link active text-secondary cursor-pointer"
+                class="nav-link active text-secondary cursor-pointer font"
                 onclick="contact()"
                 >Contacto</a
               >
@@ -69,7 +75,7 @@
             class="col-lg-7 d-flex justify-content-center align-items-center"
           >
             <h1 class="text-secondary text-start text-lg-center">
-              ZP TU ZAPATERÍA DE CONFIANZA
+              Tu zapatería de confianza
             </h1>
           </div>
           <div
@@ -116,11 +122,14 @@
         </div>
       </section>
     </div>
-    <section class="bg-nosotros bg-black d-grid p-5" id="nosotros">
+    <section
+      class="bg-nosotros bg-black d-grid p-5 position-relative"
+      id="nosotros"
+    >
       <div
-        class="col-12 d-flex justify-content-center flex-column align-items-center p-5 text-secondary text-center"
+        class="col-12 d-flex justify-content-center flex-column align-items-center p-lg-5 text-secondary text-lg-center textNosotros"
       >
-        <h1>¿Quiénes somos?</h1>
+        <h1 class="p-lg-4 pb-3">¿Quiénes somos?</h1>
         <p>
           Somos los de siempre, los de tu barrio. Nuestros zapatos y nuestros
           servicios, nuestra cercanía. Eso no ha cambiado. Solo queremos estar
@@ -130,34 +139,63 @@
         <p>
           Si aún no nos conoces, sigue navegando para descubrir nuestros
           servicios o pásate por nuestro negocio. Estaremos encantados de
-          atenderte
+          atenderte.
         </p>
       </div>
-      <div class="col-sm-4"></div>
+      <div class="videoContainer">
+        <video
+          src="video.mp4"
+          autoplay
+          loop
+          muted
+          class="position-absolute"
+        ></video>
+      </div>
     </section>
 
-    <section
-      id="servicios"
-      class="bg-servicios d-flex align-items-center justify-content-center p-5"
-    >
+    <section id="servicios" class="bg-servicios p-5">
+      <h1 class="pb-5 text-center">Servicios</h1>
       <div class="d-flex flex-lg-row flex-column justify-content-around gap-5">
         <div class="d-flex flex-column align-items-center gap-5">
           <div id="card1" class="card"></div>
-          <h3>EDICIONES ESPECIALES</h3>
+          <h3 class="cardText" id="text1">Ediciones especiales</h3>
         </div>
         <div class="d-flex flex-column align-items-center gap-5">
           <div id="card2" class="card"></div>
-          <h3>TODAS LAS TALLAS</h3>
+          <h3 class="cardText" id="text2">Todos los estilos</h3>
         </div>
         <div class="d-flex flex-column align-items-center gap-5">
           <div id="card3" class="card"></div>
-          <h3>SERVICIO PERSONALIZADO</h3>
+          <h3 class="cardText" id="text3">Todas las tallas</h3>
         </div>
       </div>
       <div
         class="d-flex flex-lg-row flex-column justify-content-around pt-5 gap-5"
       ></div>
     </section>
-    <section id="servicios" class="bg-servicios2"></section>
+    <section id="servicios" class="bg-black">
+      <div class="container py-5">
+        <h2 class="text-secondary">Nuestras marcas</h2>
+        <button id="sportButton">Deportivas</button>
+        <button id="babyButton">Infantiles</button>
+        <div class="brands slider p-5" id="sports">
+          <div class="slide">
+            <img id="img" src="img/brands/pumaSINFONDO.png"/>
+          </div>
+          <div class="slide">
+            <img id="img" src="img/brands/nike.png" />
+          </div>
+          <div class="slide">
+            <img id="img" src="img/brands/nb.png" />
+          </div>
+          <div class="slide">
+            <img id="img" src="img/brands/rb.png" />
+          </div>
+          <div class="slide">
+            <img id="img" src="img/brands/adidas.png" />
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
