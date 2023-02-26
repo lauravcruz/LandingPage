@@ -55,6 +55,9 @@ $(document).ready(function () {
   $("#babyButton").click(function () {
     $("#babys").toggle();
   });
+  $("#bootsButton").click(function () {
+    $("#boots").toggle();
+  });
 });
 
 function contact() {
@@ -65,7 +68,7 @@ function contact() {
   </div><input type="text" id="name" class="swal2-input" placeholder="Nombre">
       <input type="email" id="email" class="swal2-input" placeholder = "E-mail">
       <textarea class = "swal2-textarea" id = "message"></textarea>`,
-    confirmButtonText: "Crear una cuenta",
+    confirmButtonText: "Enviar",
     focusConfirm: false,
     preConfirm: () => {
       let name = Swal.getPopup().querySelector("#name").value;
