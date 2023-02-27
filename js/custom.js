@@ -65,18 +65,18 @@ $(document).ready(function () {
     ],
   });
 
-  $("#sportButton").click(function () {
-    $("#sports").toggle();
-    $("#sportButton").toggleClass("selected");
-  });
-  $("#babyButton").click(function () {
-    $("#babys").toggle();
-    $("#babyButton").toggleClass("selected");
-  });
-  $("#bootsButton").click(function () {
-    $("#boots").toggle();
-    $("#bootsButton").toggleClass("selected");
-  });
+  let categories = {
+    "#sportButton": "#sports",
+    "#babyButton": "#babys",
+    "#bootsButton": "#boots",
+  };
+
+  for (let category in categories) {
+    $(category).click(function () {
+      $(categories[category]).toggle();
+      $(category).toggleClass("selected");
+    });
+  }
 
   function reveal() {
     let reveals = $(".reveal");
