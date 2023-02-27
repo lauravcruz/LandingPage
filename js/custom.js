@@ -2,6 +2,22 @@
 let polaroids = $(".polaroid");
 
 $(document).ready(function () {
+  function animate() {
+    $("#shape").animate({ top: "30px", easing: "swing" }, 1000, function () {
+      $("#shape").animate({ top: "-10px", easing: "swing" }, 1000, function () {
+        $("#shape").animate(
+          { top: "10px", easing: "swing" },
+          1000,
+          function () {
+            setTimeout(() => {
+              animate();
+            }, 1000);
+          }
+        );
+      });
+    });
+  }
+  animate();
   for (let i = 0; i < polaroids.length; i++) {
     $("#" + polaroids[i].id).click("click", () => {
       hidePolaroid(i);
@@ -51,13 +67,33 @@ $(document).ready(function () {
 
   $("#sportButton").click(function () {
     $("#sports").toggle();
+    $("#sportButton").toggleClass("selected");
   });
   $("#babyButton").click(function () {
     $("#babys").toggle();
+    $("#babyButton").toggleClass("selected");
   });
   $("#bootsButton").click(function () {
     $("#boots").toggle();
+    $("#bootsButton").toggleClass("selected");
   });
+
+  function reveal() {
+    let reveals = $(".reveal");
+    for (let i = 0; i < reveals.length; i++) {
+      let windowHeight = window.innerHeight;
+      //Con getBoundingClientRect recogemos el tamaño del elemento y su posición relativa respecto a la ventana
+      let elementTop = reveals[i].getBoundingClientRect().top;
+      let elementVisible = 95;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+  $(window).scroll(reveal);
+  reveal();
 });
 
 function contact() {
